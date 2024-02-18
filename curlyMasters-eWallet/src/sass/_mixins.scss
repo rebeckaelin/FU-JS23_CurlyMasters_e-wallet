@@ -1,0 +1,51 @@
+/* Återanvändbara stilblock. */ 
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+@mixin grid-center {
+    display: grid;
+    place-items: center;
+}
+
+@mixin grid-columns($cols) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+}
+
+@mixin grid-rows($rows) {
+    display: grid;
+    grid-template-rows: repeat($rows, 1fr);
+}
+
+@mixin grid-gap($gap) {
+    gap: $gap;
+}
+
+@mixin grid-area($area) {
+    grid-area: $area;
+}
+
+/* För att använda grid-area i koden, skriv in värdet vi vill att den ska producera. Exempelvis: .container { @include grid-columns(3); } så skulle den ju producera 3 kolumner. T.EX! 
