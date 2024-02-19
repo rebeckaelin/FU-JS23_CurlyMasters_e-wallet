@@ -1,7 +1,6 @@
 import './App.scss';
-import RootLayout from './RootLayout.tsx';
-import HomePage from './../MainContent/HomePage/HomePage.tsx';
-import AddCardPage from './../MainContent/AddCardPage/AddCardPage.tsx';
+
+
 
 import {
   createBrowserRouter,
@@ -14,8 +13,8 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<HomePage />}/>
-      <Route path="addcard" element={<AddCardPage />}/>
+      <Route path="/" element={<Cards />}/>
+      <Route path="/addcard" element={<AddCard />}/>
     </Route>
   )
 );
