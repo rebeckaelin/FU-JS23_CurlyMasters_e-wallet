@@ -1,0 +1,498 @@
+.cards {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .cards .div {
+    background-color: #ffffff;
+    height: 896px;
+    position: relative;
+    width: 414px;
+  }
+  
+  .cards .overlap {
+    height: 345px;
+    left: 8px;
+    position: absolute;
+    top: 411px;
+    width: 400px;
+  }
+  .cards .ninja-card {
+    height: 257px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 398px;
+  }
+  
+  .cards .block-card {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: var(--vendor-block-chain-purple);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #00000033;
+    height: 241px;
+    left: 8px;
+    position: absolute;
+    top: 55px;
+    width: 382px;
+  }
+  
+  .cards .noun-wifi {
+    height: 44px;
+    left: 19px;
+    position: absolute;
+    top: 27px;
+    width: 44px;
+  }
+  
+  .cards .chain-logo {
+    height: 38px;
+    left: 322px;
+    position: absolute;
+    top: 27px;
+    width: 38px;
+  }
+  
+  .cards .evil-card {
+    height: 241px;
+    left: 8px;
+    position: absolute;
+    top: 104px;
+    width: 392px;
+  }
+  
+  .cards .overlap-group {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: var(--vendor-evil-corp-red);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #00000033;
+    height: 241px;
+    position: relative;
+    width: 382px;
+  }
+  
+  .cards .overlap-2 {
+    height: 46px;
+    left: 273px;
+    position: absolute;
+    top: 178px;
+    width: 89px;
+  }
+  
+  .cards .text-wrapper {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 14px;
+    width: 89px;
+  }
+  .cards .ninja-card {
+    height: 257px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 398px;
+  }
+  
+  .cards .block-card {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: var(--vendor-block-chain-purple);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #00000033;
+    height: 241px;
+    left: 8px;
+    position: absolute;
+    top: 55px;
+    width: 382px;
+  }
+  
+  .cards .noun-wifi {
+    height: 44px;
+    left: 19px;
+    position: absolute;
+    top: 27px;
+    width: 44px;
+  }
+  
+  .cards .chain-logo {
+    height: 38px;
+    left: 322px;
+    position: absolute;
+    top: 27px;
+    width: 38px;
+  }
+  
+  .cards .evil-card {
+    height: 241px;
+    left: 8px;
+    position: absolute;
+    top: 104px;
+    width: 392px;
+  }
+  
+  .cards .overlap-group {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: var(--vendor-evil-corp-red);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #00000033;
+    height: 241px;
+    position: relative;
+    width: 382px;
+  }
+  
+  .cards .overlap-2 {
+    height: 46px;
+    left: 273px;
+    position: absolute;
+    top: 178px;
+    width: 89px;
+  }
+  
+  .cards .text-wrapper {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 14px;
+    width: 89px;
+  }
+  .cards .valid-thru {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 16px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 0;
+    width: 89px;
+  }
+  
+  .cards .text-wrapper-2 {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 29px;
+    font-weight: 400;
+    left: 16px;
+    letter-spacing: 0.87px;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 120px;
+    width: 350px;
+  }
+  
+  .cards .overlap-3 {
+    height: 46px;
+    left: 16px;
+    position: absolute;
+    top: 178px;
+    width: 251px;
+  }
+  
+  .cards .christoffer {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 14px;
+    width: 251px;
+  }
+  
+  .cards .cardholder-name {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 16px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 0;
+    width: 251px;
+  }
+  
+  .cards .group {
+    height: 84px;
+    left: 16px;
+    position: absolute;
+    top: 23px;
+    width: 50px;
+  }
+  .cards .ninja-card {
+    height: 257px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 398px;
+  }
+  
+  .cards .block-card {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: var(--vendor-block-chain-purple);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #00000033;
+    height: 241px;
+    left: 8px;
+    position: absolute;
+    top: 55px;
+    width: 382px;
+  }
+  
+  .cards .noun-wifi {
+    height: 44px;
+    left: 19px;
+    position: absolute;
+    top: 27px;
+    width: 44px;
+  }
+  
+  .cards .chain-logo {
+    height: 38px;
+    left: 322px;
+    position: absolute;
+    top: 27px;
+    width: 38px;
+  }
+  
+  .cards .evil-card {
+    height: 241px;
+    left: 8px;
+    position: absolute;
+    top: 104px;
+    width: 392px;
+  }
+  
+  .cards .overlap-group {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%);
+    background-color: var(--vendor-evil-corp-red);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px #00000033;
+    height: 241px;
+    position: relative;
+    width: 382px;
+  }
+  
+  .cards .overlap-2 {
+    height: 46px;
+    left: 273px;
+    position: absolute;
+    top: 178px;
+    width: 89px;
+  }
+  
+  .cards .text-wrapper {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 14px;
+    width: 89px;
+  }
+  .cards .valid-thru {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 16px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 0;
+    width: 89px;
+  }
+  
+  .cards .text-wrapper-2 {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 29px;
+    font-weight: 400;
+    left: 16px;
+    letter-spacing: 0.87px;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 120px;
+    width: 350px;
+  }
+  
+  .cards .overlap-3 {
+    height: 46px;
+    left: 16px;
+    position: absolute;
+    top: 178px;
+    width: 251px;
+  }
+  
+  .cards .christoffer {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    height: 32px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 14px;
+    width: 251px;
+  }
+  
+  .cards .cardholder-name {
+    box-shadow: var(--bevel-effect);
+    color: #ffffff;
+    font-family: "PT Mono", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    height: 16px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0.5px 0.5px 0px #0000008c;
+    top: 0;
+    width: 251px;
+  }
+  
+  .cards .group {
+    height: 84px;
+    left: 16px;
+    position: absolute;
+    top: 23px;
+    width: 50px;
+  }
+  .cards .subtract {
+    height: 34px;
+    left: 330px;
+    position: absolute;
+    top: 128px;
+    width: 38px;
+  }
+  
+  .cards .CTA-use-this-card {
+    height: 80px;
+    left: 16px;
+    position: absolute;
+    top: 799px;
+    width: 384px;
+  }
+  
+  .cards .add-a-new-card-wrapper {
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 8px;
+    height: 80px;
+    position: relative;
+    width: 382px;
+  }
+  
+  .cards .add-a-new-card {
+    color: #000000;
+    font-family: "PT Mono", Helvetica;
+    font-size: 22px;
+    font-weight: 700;
+    height: 32px;
+    left: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    width: 304px;
+  }
+  
+  .cards .overlap-4 {
+    height: 288px;
+    left: 0;
+    position: absolute;
+    top: 107px;
+    width: 414px;
+  }
+  
+  .cards .bitcoin-card-active {
+    height: 273px;
+    left: 0;
+    position: absolute;
+    top: 15px;
+    width: 414px;
+  }
+  
+  .cards .active-card {
+    color: #22222299;
+    font-family: "Source Sans Pro", Helvetica;
+    font-size: 12px;
+    font-weight: 600;
+    height: 26px;
+    left: 55px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 304px;
+  }
+  .cards .e-wallet {
+    color: #222222;
+    font-family: "Source Sans Pro", Helvetica;
+    font-size: 35px;
+    font-weight: 700;
+    height: 98px;
+    left: 55px;
+    letter-spacing: 0;
+    line-height: 35px;
+    position: absolute;
+    text-align: center;
+    top: 8px;
+    width: 304px;
+  }      

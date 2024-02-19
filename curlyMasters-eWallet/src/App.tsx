@@ -1,7 +1,7 @@
-import './App.scss';
-import RootLayout from './RootLayout.tsx';
-import HomePage from './../MainContent/HomePage/HomePage.tsx';
-import AddCardPage from './../MainContent/AddCardPage/AddCardPage.tsx';
+// import ReactDOMClient from "react-dom/client";
+import { Cards } from "./Screens/Cards/Cards";
+// import { Addcard } from "./Screens/Addcard/Addcard";
+
 
 import {
   createBrowserRouter,
@@ -14,12 +14,10 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<HomePage />}/>
-      <Route path="addcard" element={<AddCardPage />}/>
+      <Route path="/" element={<Cards />}/>
     </Route>
   )
 );
-
 
 function App() {
 
@@ -30,4 +28,8 @@ function App() {
   )
 }
 
+
 export default App
+// const app = document.getElementById("app");
+// const root = ReactDOMClient.createRoot(app);
+// root.render(<Cards />);
