@@ -1,5 +1,6 @@
-import './App.scss';
-
+// import ReactDOMClient from "react-dom/client";
+import { Cards } from "./Screens/Cards/Cards";
+// import { Addcard } from "./Screens/Addcard/Addcard";
 
 
 import {
@@ -14,11 +15,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Cards />}/>
-      <Route path="/addcard" element={<AddCard />}/>
     </Route>
   )
 );
-
 
 function App() {
 
@@ -29,4 +28,8 @@ function App() {
   )
 }
 
+
 export default App
+// const app = document.getElementById("app");
+// const root = ReactDOMClient.createRoot(app);
+// root.render(<Cards />);
