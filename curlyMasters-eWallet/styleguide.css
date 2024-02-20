@@ -1,0 +1,12 @@
+:root {
+  --bevel: ;
+  --bevel-effect: ;
+  --gray-1: rgba(51, 51, 51, 1);
+  --text-effect: 0.5px 0.5px 0px 0px rgba(255, 255, 255, 0.5),
+    -0.5px -0.5px 0px 0px rgba(255, 255, 255, 0.25);
+  --text-effect-light: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  --vendor-bitcoin-orange: rgba(255, 174, 52, 1);
+  --vendor-block-chain-purple: rgba(139, 88, 249, 1);
+  --vendor-evil-corp-red: rgba(243, 51, 85, 1);
+  --vendor-ninja-black: rgba(34, 34, 34, 1);
+}

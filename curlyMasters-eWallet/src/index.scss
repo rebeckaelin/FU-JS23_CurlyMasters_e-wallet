@@ -1,25 +1,22 @@
 /* Globala stilar */
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 //  font-family: "Source Sans 3", sans-serif; (header)
 //  font-family: "PT Mono", monospace; (card)
 
-// @import '../sass/_mixins.scss'; // SE ÖVER 
+// @import '../sass/_mixins.scss'; // SE ÖVER
 // @import '../sass/_variables.scss';
 
-
-
 body {
-    // @include flex-center; // SE ÖVER 
-    background-color: bisque;
-    color: blue;
+  background: black;
 }
 
-h1, button {
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 700;
+h1,
+button {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
 }
 
 h2 {
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 600;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
 }
