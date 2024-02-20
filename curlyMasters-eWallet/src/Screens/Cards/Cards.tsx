@@ -1,6 +1,6 @@
-import React from "react";
+
 import "./style.scss";
-export const Cards = (): JSX.Element => {
+export const Cards = () => {
     return (
       <div className="cards">
         <div className="div">

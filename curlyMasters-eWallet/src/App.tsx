@@ -1,5 +1,7 @@
 // import ReactDOMClient from "react-dom/client";
 import { Cards } from "./Screens/Cards/Cards";
+import "../global.css";
+import "../styleguide.css";
 // import { Addcard } from "./Screens/Addcard/Addcard";
 
 
