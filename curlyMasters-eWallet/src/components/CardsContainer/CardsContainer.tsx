@@ -1,16 +1,15 @@
 import Card from "../Card/Card";
 import "./CardsContainer.scss";
 
-type Props = {};
-
-const CardsContainer = (props: Props) => {
+const CardsContainer = () => {
   return (
     <main className="card-wrapper">
-      <section className="active-card-container">
-        <p>active card</p>
-        <Card />
+      <section className="active-card-container"></section>
+      <section className="wallet-container">
+        <ul className="wallet">
+          <Card />
+        </ul>
       </section>
-      <section className="wallet-container"></section>
     </main>
   );
 };

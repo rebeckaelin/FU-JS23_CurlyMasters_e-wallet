@@ -2,18 +2,16 @@ import "./Card.scss";
 import Wifi from "../../../img/Group.svg";
 import Bitcoin from "../../../img/Bitcoin.svg";
 
-type Props = {};
-
-const Card = (props: Props) => {
+const Card = (props) => {
   return (
-    <>
-      <article className="card">
+    <div>
+      <article className="card" key={props.id}>
         <picture className="img-wrapper">
           <img src={Wifi} alt="" />
-          <img src={Bitcoin} alt="" />
+          <img src={props.vendor} alt="" />
         </picture>
         <article className="card-number-wrapper">
-          <p className="card-number">6666 6666 6666 6666</p>
+          <p className="card-number">{props.cardnumber}</p>
         </article>
         <div>
           <article className="card-holder">
@@ -21,12 +19,12 @@ const Card = (props: Props) => {
             <p className="date-label">VALID THRU</p>
           </article>
           <article className="card-user">
-            <p className="name">CHRISTOFFER WALLENBERG</p>
-            <p className="date">10/23</p>
+            <p className="name">{props.name}</p>
+            <p className="date">{props.validthru}</p>
           </article>
         </div>
       </article>
-    </>
+    </div>
   );
 };
 

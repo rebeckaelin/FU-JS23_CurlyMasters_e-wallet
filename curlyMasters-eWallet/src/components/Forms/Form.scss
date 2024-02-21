@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  font-family: "PT Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 13px;
+  margin: 1rem;
+}
+label {
+  margin-bottom: 0.2rem;
+}
+input,
+select {
+  width: 382px;
+  height: 56px;
+  top: 528px;
+  left: 16px;
+  border-radius: 8px;
+  border: 1px;
+  font-family: "PT Mono", monospace;
+  border: 1px solid black;
+}
+
+.addButton {
+  width: 382px;
+  height: 72px;
+  top: 808px;
+  left: 16px;
+  border-radius: 8px;
+  font-family: "PT Mono", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-bottom: 1rem;
+}
