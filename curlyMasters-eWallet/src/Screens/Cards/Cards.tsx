@@ -10,18 +10,20 @@ import "./../../App.css";
 export const Cards = () => {
   const [updatedCard, setUpdatedCard] = useState(cardList);
 
-  const wallet = updatedCard.map((listItem, index) => (
-    <li className="wallet__item" key={listItem.id}>
-      <Card
-        id={listItem.id}
-        cardnumber={listItem.cardnumber}
-        name={listItem.name}
-        validthru={listItem.validthru}
-        backgroundColor={listItem.backgroundColor}
-        color={listItem.color}
-        vendor={listItem.selectedIcon}
-      />
-    </li>
+  const wallet = updatedCard.map((listItem) => (
+    <div className="card-wrapper">
+      <li className="wallet__item" key={listItem.id}>
+        <Card
+          id={listItem.id}
+          cardnumber={listItem.cardnumber}
+          name={listItem.name}
+          validthru={listItem.validthru}
+          backgroundColor={listItem.backgroundColor}
+          color={listItem.color}
+          vendor={listItem.selectedIcon}
+        />
+      </li>
+    </div>
   ));
   return (
     <section className="defaultPage">
