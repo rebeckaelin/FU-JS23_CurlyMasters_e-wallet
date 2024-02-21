@@ -1,7 +1,17 @@
 import {useState} from "react";
+
+import {cardList} from "../../constants/CardList";
+import {useNavigate} from "react-router-dom";
+
 import "./Form.scss";
+import Bitcoin from "./../../assets/Bitcoin.svg";
+import EvilCorp from "./../../assets/Evilcorp.svg";
+import Blockchain from "./../../assets/Blockchain.svg";
+import Ninjabank from "./../../assets/Ninjabank.svg";
 
 const Form = () => {
+  const navigate = useNavigate();
+  const [selectedIcon, setSelectedIcon] = useState(null);
   const [formData, setFormData] = useState({
     cardnumber: "",
     name: "",
@@ -10,27 +20,44 @@ const Form = () => {
     vendor: "",
   });
 
-  const [cardList, setCardList] = useState([]);
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("formData in handleSubmit", formData);
-    // console.log("cardList at start of handleSubmit", cardList);
 
-    const newCard = {
+    let backgroundColor = "";
+    let color = "";
+    let selectedIcon = null;
+
+    if (formData.vendor === "bitcoin") {
+      backgroundColor = "rgba(255, 174, 52, 1)";
+      selectedIcon = Bitcoin;
+    } else if (formData.vendor === "evilcorp") {
+      backgroundColor = "rgba(243, 51, 85, 1)";
+      color = "white";
+      selectedIcon = EvilCorp;
+    } else if (formData.vendor === "ninjabank") {
+      backgroundColor = "rgba(34, 34, 34, 1)";
+      color = "white";
+      selectedIcon = Ninjabank;
+    } else if (formData.vendor === "blockchain") {
+      backgroundColor = "rgba(139, 88, 249, 1)";
+      selectedIcon = Blockchain;
+    } else {
+      backgroundColor = "rgba(255, 255, 255, 1)";
+    }
+
+    cardList.push({
       ...formData,
       id: cardList.length + 1,
-    };
-
-    const newCardList = [...cardList, newCard];
-    console.log("newCardList", newCardList);
-    setCardList(newCardList);
-
+      backgroundColor: backgroundColor,
+      color: color,
+      selectedIcon: selectedIcon,
+    });
     // console.log("cardList", cardList);
-  };
-
-  const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+    navigate("/");
   };
 
   return (
@@ -41,6 +68,8 @@ const Form = () => {
           <input
             onChange={handleChange}
             pattern="[0-9\s]{13,19}"
+            minLength="16"
+            maxLength="16"
             type="text"
             name="cardnumber"
             inputMode="numeric"
@@ -61,6 +90,8 @@ const Form = () => {
           <label htmlFor="validthru">VALID THRU</label>
           <input
             onChange={handleChange}
+            minLength="4"
+            maxLength="4"
             type="text"
             name="validthru"
             value={formData.validthru}
@@ -70,6 +101,7 @@ const Form = () => {
           <label htmlFor="ccv">CCV</label>
           <input
             onChange={handleChange}
+            maxLength="3"
             type="text"
             name="ccv"
             value={formData.ccv}
@@ -80,8 +112,9 @@ const Form = () => {
           <select
             onChange={handleChange}
             name="vendor"
-            id=""
+            id="vendor"
             value={formData.vendor}>
+            <option value="default"></option>
             <option value="evilcorp">Evil Corp</option>
             <option value="blockchain">Block Chain Inc</option>
             <option value="ninjabank">Ninja Bank</option>
@@ -97,3 +130,22 @@ const Form = () => {
 };
 
 export default Form;
+
+// const [cardList, setCardList] = useState([]);
+
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+//   // console.log("formData in handleSubmit", formData);
+//   // console.log("cardList at start of handleSubmit", cardList);
+
+//   const newCard = {
+//     ...formData,
+//     id: cardList.length + 1,
+//   };
+
+//   const newCardList = [...cardList, newCard];
+//   // console.log("newCardList", newCardList);
+//   setCardList(newCardList);
+
+//   console.log("cardList", cardList);
+// };

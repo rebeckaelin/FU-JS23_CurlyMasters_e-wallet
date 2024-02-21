@@ -1,0 +1,13 @@
+.wallet {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.wallet li {
+  height: 20%;
+}
+
+.wallet li:not(:last-child) {
+  margin-bottom: -27%;
+}

@@ -1,17 +1,29 @@
 import "./Card.scss";
-import Wifi from "../../../img/Group.svg";
-import Bitcoin from "../../../img/Bitcoin.svg";
+import Wifi from "../../assets/wifi.svg";
 
 const Card = (props) => {
+  const groupByFour = (num) => {
+    return num.replace(/(\d{4}(?!\s))/g, "$1 ");
+  };
+
+  const groupByTwo = (num) => {
+    if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
+      const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
+      return formattedNum;
+    }
+    return ""; // return empty string if num is not valid
+  };
   return (
     <div>
-      <article className="card" key={props.id}>
+      <article
+        style={{backgroundColor: props.backgroundColor, color: props.color}}
+        className="card">
         <picture className="img-wrapper">
           <img src={Wifi} alt="" />
           <img src={props.vendor} alt="" />
         </picture>
         <article className="card-number-wrapper">
-          <p className="card-number">{props.cardnumber}</p>
+          <p className="card-number">{groupByFour(props.cardnumber)}</p>
         </article>
         <div>
           <article className="card-holder">
@@ -20,7 +32,7 @@ const Card = (props) => {
           </article>
           <article className="card-user">
             <p className="name">{props.name}</p>
-            <p className="date">{props.validthru}</p>
+            <p className="date">{groupByTwo(props.validthru)}</p>
           </article>
         </div>
       </article>

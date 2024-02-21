@@ -1,59 +1,35 @@
-import "./style.scss";
+import "./Cards.scss";
+import {useState} from "react";
 import Card from "../../components/Card/Card";
-// import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import Header from "../../components/Header/Header";
 import AddNewCardButton from "../../components/AddNewCardButton/AddNewCardButton";
+import {cardList} from "../../constants/CardList";
 
-const cardList = [
-  {
-    cardnumber: "hej",
-    name: "hej",
-    validthru: "11",
-    ccv: "",
-    vendor: "",
-    id: "",
-  },
-  {
-    cardnumber: "hej",
-    name: "hej",
-    validthru: "11",
-    ccv: "",
-    vendor: "",
-    id: "",
-  },
-];
-
-const listItems = cardList.map((listItem) => (
-  <li key={listItem.id}>
-    <div className="icons">
-      <img src="" alt="Wifi Icon" />
-      <img src="" alt="Vendor Icon" />
-    </div>
-    <div>
-      <p>{listItem.cardnumber}</p>
-    </div>
-    <div>
-      <p>CARDHOLDER NAME: {listItem.name}</p>
-      <p>VALID THRU: {listItem.validthru}</p>
-    </div>
-  </li>
-));
+import "./../../App.css";
 
 export const Cards = () => {
+  const [updatedCard, setUpdatedCard] = useState(cardList);
+
+  const wallet = updatedCard.map((listItem, index) => (
+    <li key={listItem.id}>
+      <Card
+        id={listItem.id}
+        cardnumber={listItem.cardnumber}
+        name={listItem.name}
+        validthru={listItem.validthru}
+        backgroundColor={listItem.backgroundColor}
+        color={listItem.color}
+        vendor={listItem.selectedIcon}
+      />
+    </li>
+  ));
   return (
-    <section className="cards">
-      <Header />
-      <p className="active-card">ACTIVE CARD</p>
+    <section className="defaultPage">
+      <Header title="E-WALLET" subtitle="ACTIVE CARD" />
+
       <section className="active-card-container"></section>
-      <section className="wallet-container">
-        <Card
-          cardnumber="XXXX XXXX XXXX XXXX"
-          name="TESTSSON TEST"
-          validthru="MM/YY"
-          vendor=""
-        />
-      </section>
-      <ul className="wallet">{listItems}</ul>
+      <section className="wallet-container">{/* <Card /> */}</section>
+      <ul className="wallet">{wallet}</ul>
 
       <AddNewCardButton />
     </section>
