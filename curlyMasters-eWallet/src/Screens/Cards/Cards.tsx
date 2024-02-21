@@ -11,7 +11,7 @@ export const Cards = () => {
   const [updatedCard, setUpdatedCard] = useState(cardList);
 
   const wallet = updatedCard.map((listItem, index) => (
-    <li key={listItem.id}>
+    <li className="wallet__item" key={listItem.id}>
       <Card
         id={listItem.id}
         cardnumber={listItem.cardnumber}
