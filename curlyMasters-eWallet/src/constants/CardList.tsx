@@ -4,6 +4,9 @@ export type CardProps = {
   validthru: string;
   ccv: string;
   vendor: string;
+  id: number;
+  backgroundColor: string;
+  color: string;
 };
 
-export const cardList: CardProps = [];
+export const cardList: CardProps[] = [];
