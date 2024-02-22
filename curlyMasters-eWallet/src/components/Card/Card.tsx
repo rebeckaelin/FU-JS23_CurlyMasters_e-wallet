@@ -1,23 +1,25 @@
 import "./Card.scss";
 import Wifi from "../../assets/wifi.svg";
 
-const Card = (props) => {
-  const groupByFour = (num) => {
-    return num.replace(/(\d{4}(?!\s))/g, "$1 ");
-  };
+const groupByFour = (num) => {
+  return num.replace(/(\d{4}(?!\s))/g, "$1 ");
+};
 
-  const groupByTwo = (num) => {
-    if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
-      const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
-      return formattedNum;
-    }
-    return ""; // return empty string if num is not valid
-  };
+const groupByTwo = (num) => {
+  if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
+    const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
+    return formattedNum;
+  }
+  return ""; // return empty string if num is not valid
+};
+
+const Card = (props) => {
   return (
     <div>
       <article
         style={{backgroundColor: props.backgroundColor, color: props.color}}
-        className="card">
+        className="card"
+        onClick={props.disableClick ? null : props.onClick}>
         <picture className="img-wrapper">
           <img src={Wifi} alt="" />
           <img src={props.vendor} alt="" />

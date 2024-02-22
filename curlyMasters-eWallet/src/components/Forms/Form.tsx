@@ -55,6 +55,7 @@ const Form = () => {
       backgroundColor: backgroundColor,
       color: color,
       selectedIcon: selectedIcon,
+      state: false,
     });
     // console.log("cardList", cardList);
     navigate("/");
