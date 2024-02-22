@@ -9,20 +9,20 @@ import {cardList as initialCardList} from "../../constants/CardList";
 export const Cards = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [cardList, setCardList] = useState(initialCardList);
-
+  // Här letar vi upp ett kort i vår lista av kort (cardList) som matchar det id vi klickade på.
   const handleClick = (id) => {
-    // console.log("id", id);
     const clickedCard = cardList.find((card) => card.id === id);
+    // Om det finns ett aktivt kort
     if (activeCard) {
+      // ...lägger vi till det aktiva kortet till slutet av vår kortlista.
       setCardList((prevCardList) => [...prevCardList, activeCard]);
     }
-    // console.log("clickedCard", clickedCard);
+    // Sedan uppdaterar vi kortlistan genom att filtrera ut det kort vi just klickade på.
     setCardList((prevCardList) =>
       prevCardList.filter((card) => card.id !== id)
     );
+    // Slutligen sätter vi det kort vi klickade på som det aktiva kortet.
     setActiveCard(clickedCard);
-    // const updatedCardList = cardList.filter((card) => card.id !== id);
-    // setCardList(updatedCardList);
   };
 
   const renderActiveCard = () => {

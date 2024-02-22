@@ -12,6 +12,9 @@ const groupByTwo = (num) => {
   }
   return ""; // return empty string if num is not valid
 };
+const toUpperCase = (name) => {
+  return name.toUpperCase();
+};
 
 const Card = (props) => {
   return (
@@ -33,7 +36,7 @@ const Card = (props) => {
             <p className="date-label">VALID THRU</p>
           </article>
           <article className="card-user">
-            <p className="name">{props.name}</p>
+            <p className="name">{toUpperCase(props.name)}</p>
             <p className="date">{groupByTwo(props.validthru)}</p>
           </article>
         </div>
