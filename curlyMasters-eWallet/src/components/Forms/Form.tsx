@@ -13,6 +13,7 @@ interface FormData {
   validthru: string;
   ccv: string;
   vendor: string;
+  id: number;
 }
 
 const Form: React.FC = () => {

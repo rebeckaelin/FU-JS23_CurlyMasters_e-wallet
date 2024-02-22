@@ -1,29 +1,28 @@
+import React, {useState} from "react";
 import "./Cards.scss";
 import "./../../App.css";
-import {useState} from "react";
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header";
 import AddNewCardButton from "../../components/AddNewCardButton/AddNewCardButton";
-import {cardList as initialCardList} from "../../constants/CardList";
+import {CardProps} from "../../constants/CardList";
 
-export const Cards = () => {
-  const [activeCard, setActiveCard] = useState(null);
-  const [cardList, setCardList] = useState(initialCardList);
+interface CardsProps {
+  cardList: CardProps[];
+}
 
-  // Här letar vi upp ett kort i vår lista av kort (cardList) som matchar det id vi klickade på.
-  const handleClick = (id) => {
+const Cards: React.FC<CardsProps> = ({cardList: initialCardList}) => {
+  const [activeCard, setActiveCard] = useState<CardProps | null>(null);
+  const [cardList, setCardList] = useState<CardProps[]>(initialCardList);
+
+  const handleClick = (id: number) => {
     const clickedCard = cardList.find((card) => card.id === id);
-    // Om det finns ett aktivt kort
     if (activeCard) {
-      // ...lägger vi till det aktiva kortet till slutet av vår kortlista.
       setCardList((prevCardList) => [...prevCardList, activeCard]);
     }
-    // Sedan uppdaterar vi kortlistan genom att filtrera ut det kort vi just klickade på.
     setCardList((prevCardList) =>
       prevCardList.filter((card) => card.id !== id)
     );
-    // Slutligen sätter vi det kort vi klickade på som det aktiva kortet.
-    setActiveCard(clickedCard);
+    setActiveCard(clickedCard || null);
   };
 
   const renderActiveCard = () => {
@@ -37,7 +36,7 @@ export const Cards = () => {
           validthru={activeCard.validthru}
           backgroundColor={activeCard.backgroundColor}
           color={activeCard.color}
-          vendor={activeCard.selectedIcon}
+          selectedIcon={activeCard.selectedIcon} // Make sure this is the correct prop name
           onClick={() => setActiveCard(null)}
           disableClick={true}
         />
@@ -54,11 +53,12 @@ export const Cards = () => {
         validthru={card.validthru}
         backgroundColor={card.backgroundColor}
         color={card.color}
-        vendor={card.selectedIcon}
+        selectedIcon={card.selectedIcon} // Make sure this is the correct prop name
         onClick={() => handleClick(card.id)}
       />
     </li>
   ));
+
   return (
     <section className="defaultPage">
       <Header title="E-WALLET" subtitle="ACTIVE CARD" />
@@ -72,3 +72,5 @@ export const Cards = () => {
     </section>
   );
 };
+
+export default Cards;

@@ -1,13 +1,23 @@
+import React from "react";
 import "./Card.scss";
 import Wifi from "../../assets/wifi.svg";
 
-//funktion som grupperar numren i cardnumber i 4*4
-const groupByFour = (num) => {
+interface CardProps {
+  cardnumber: string;
+  name: string;
+  validthru: string;
+  backgroundColor: string;
+  color: string;
+  vendor: string;
+  disableClick?: boolean;
+  onClick?: () => void;
+}
+
+const groupByFour = (num: string): string => {
   return num.replace(/(\d{4}(?!\s))/g, "$1 ");
 };
 
-//funktion som lägger till ett / mellan numrena i valid thru
-const groupByTwo = (num) => {
+const groupByTwo = (num: string): string => {
   if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
     const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
     return formattedNum;
@@ -15,19 +25,17 @@ const groupByTwo = (num) => {
   return "";
 };
 
-//funktion för att göra namnet på kortet till stora bokstäver oavsett hur man skriver in det
-const toUpperCase = (name) => {
+const toUpperCase = (name: string): string => {
   return name.toUpperCase();
 };
 
-//komponent
-const Card = (props) => {
+const Card: React.FC<CardProps> = (props) => {
   return (
     <div>
       <article
         style={{backgroundColor: props.backgroundColor, color: props.color}}
         className="card"
-        onClick={props.disableClick ? null : props.onClick}>
+        onClick={props.disableClick ? undefined : props.onClick}>
         <picture className="img-wrapper">
           <img src={Wifi} alt="" />
           <img src={props.vendor} alt="" />
