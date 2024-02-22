@@ -1,25 +1,18 @@
-import React, {useState, ChangeEvent, FormEvent} from "react";
+import {useState} from "react";
+
 import {cardList} from "../../constants/CardList";
 import {useNavigate} from "react-router-dom";
+
 import "./Form.scss";
-import Bitcoin from "../../assets/Bitcoin.svg";
-import EvilCorp from "../../assets/Evilcorp.svg";
-import Blockchain from "../../assets/Blockchain.svg";
-import Ninjabank from "../../assets/Ninjabank.svg";
+import Bitcoin from "./../../assets/Bitcoin.svg";
+import EvilCorp from "./../../assets/Evilcorp.svg";
+import Blockchain from "./../../assets/Blockchain.svg";
+import Ninjabank from "./../../assets/Ninjabank.svg";
 
-interface FormData {
-  cardnumber: string;
-  name: string;
-  validthru: string;
-  ccv: string;
-  vendor: string;
-  id: number;
-}
-
-const Form: React.FC = () => {
+const Form = () => {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState({
     cardnumber: "",
     name: "",
     validthru: "",
@@ -27,13 +20,11 @@ const Form: React.FC = () => {
     vendor: "",
   });
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ): void => {
+  const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     let backgroundColor = "";
@@ -66,7 +57,7 @@ const Form: React.FC = () => {
       selectedIcon: selectedIcon,
       state: false,
     });
-
+    // console.log("cardList", cardList);
     navigate("/");
   };
 
@@ -78,8 +69,8 @@ const Form: React.FC = () => {
           <input
             onChange={handleChange}
             pattern="[0-9\s]{13,19}"
-            minLength={16}
-            maxLength={16}
+            minLength="16"
+            maxLength="16"
             type="text"
             name="cardnumber"
             inputMode="numeric"
@@ -100,8 +91,8 @@ const Form: React.FC = () => {
           <label htmlFor="validthru">VALID THRU</label>
           <input
             onChange={handleChange}
-            minLength={4}
-            maxLength={4}
+            minLength="4"
+            maxLength="4"
             type="text"
             name="validthru"
             value={formData.validthru}
@@ -111,7 +102,7 @@ const Form: React.FC = () => {
           <label htmlFor="ccv">CCV</label>
           <input
             onChange={handleChange}
-            maxLength={3}
+            maxLength="3"
             type="text"
             name="ccv"
             value={formData.ccv}
