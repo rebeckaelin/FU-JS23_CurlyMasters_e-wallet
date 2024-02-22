@@ -3,6 +3,7 @@ import Form from "../../components/Forms/Form";
 import "./addcard.scss";
 import "./../../App.css";
 import Header from "../../components/Header/Header";
+import Bitcoin from "./../../assets/Bitcoin.svg";
 
 const Addcard = () => {
   return (
@@ -14,7 +15,7 @@ const Addcard = () => {
           cardnumber="XXXX XXXX XXXX XXXX"
           name="EFTERNAMN FÖRNAMN"
           validthru="MM/YY"
-          vendor=""
+          vendor={Bitcoin}
         />
         <Form />
       </section>

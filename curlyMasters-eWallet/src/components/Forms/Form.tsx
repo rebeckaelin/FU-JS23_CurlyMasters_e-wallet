@@ -122,7 +122,10 @@ const Form = () => {
             <option value="bitcoin">Bitcoin Inc</option>
           </select>
         </section>
-        <button className="addButton" type="submit">
+        <button
+          style={{backgroundColor: "black", color: "white"}}
+          className="addButton"
+          type="submit">
           ADD CARD
         </button>
       </form>
