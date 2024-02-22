@@ -9,8 +9,9 @@ import Blockchain from "./../../assets/Blockchain.svg";
 import Ninjabank from "./../../assets/Ninjabank.svg";
 
 const Form = () => {
+  //variabel för att kunna använda navigera från add card-knappen till första sidan igen
   const navigate = useNavigate();
-
+  //deklarerar hur useStaten skall se ut, formen av ett objekt i detta fall
   const [formData, setFormData] = useState({
     cardnumber: "",
     name: "",
@@ -20,16 +21,17 @@ const Form = () => {
   });
 
   const handleChange = (e) => {
+    //här säger vi åt datan som kommer från inputfältet att se ut som formData
     setFormData({...formData, [e.target.name]: e.target.value});
   };
-
+  //funktion för att hantera datan som kommer från formuläret när det submittas/trycks på add card-knappen
   const handleSubmit = (e) => {
     e.preventDefault();
 
     let backgroundColor = "";
     let color = "";
     let selectedIcon = null;
-
+    //if-sats för att tilldela ett kort en färg, textfärg och ikon beroende på vad som väljs.
     if (formData.vendor === "bitcoin") {
       backgroundColor = "rgba(255, 174, 52, 1)";
       selectedIcon = Bitcoin;
@@ -47,16 +49,15 @@ const Form = () => {
     } else {
       backgroundColor = "rgba(211, 211, 211)";
     }
-
+    // kortet pushas in i vår array och får ytterligare lite egenskaper tex ett unikt id.
     cardList.push({
       ...formData,
       id: cardList.length + 1,
       backgroundColor: backgroundColor,
       color: color,
       selectedIcon: selectedIcon,
-      state: false,
     });
-    // console.log("cardList", cardList);
+    //här säger vi att gå till första sidan när vi också klickar på add card-knappen
     navigate("/");
   };
 
@@ -66,8 +67,8 @@ const Form = () => {
         <section className="flex">
           <label htmlFor="cardnumber">CARD NUMBER</label>
           <input
-            onChange={handleChange}
-            pattern="[0-9\s]{13,19}"
+            onChange={handleChange} //här körs funktionen som hämtar in datan in i formData
+            pattern="[0-9\s]{16}"
             minLength="16"
             maxLength="16"
             type="text"
@@ -79,7 +80,7 @@ const Form = () => {
         <section className="flex">
           <label htmlFor="name">CARDHOLDER NAME</label>
           <input
-            onChange={handleChange}
+            onChange={handleChange} //här körs funktionen som hämtar in datan in i formData
             pattern="^[A-Za-zÅÄÖåäö\s]*$"
             type="text"
             name="name"
@@ -89,7 +90,7 @@ const Form = () => {
         <section className="flex">
           <label htmlFor="validthru">VALID THRU</label>
           <input
-            onChange={handleChange}
+            onChange={handleChange} //här körs funktionen som hämtar in datan in i formData
             minLength="4"
             maxLength="4"
             type="text"
@@ -100,7 +101,7 @@ const Form = () => {
         <section className="flex">
           <label htmlFor="ccv">CCV</label>
           <input
-            onChange={handleChange}
+            onChange={handleChange} //här körs funktionen som hämtar in datan in i formData
             maxLength="3"
             type="text"
             name="ccv"
@@ -110,7 +111,7 @@ const Form = () => {
         <section className="flex">
           <label htmlFor="vendor">VENDOR</label>
           <select
-            onChange={handleChange}
+            onChange={handleChange} //här körs funktionen som hämtar in datan in i formData
             name="vendor"
             id="vendor"
             value={formData.vendor}>
