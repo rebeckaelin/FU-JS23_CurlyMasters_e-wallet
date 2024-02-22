@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Mono:400,700|Source+Sans+Pro:700,600");
+
+.card {
+  background-color: lightgrey;
+  width: 382px;
+  height: 241px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  margin-bottom: -14.5rem;
+  position: relative;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-number-wrapper {
+  font-family: "PT Mono", monospace;
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.card-holder {
+  font-family: "PT Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-user {
+  display: flex;
+  justify-content: space-between;
+  font-family: "PT Mono", monospace;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -1rem;
+}

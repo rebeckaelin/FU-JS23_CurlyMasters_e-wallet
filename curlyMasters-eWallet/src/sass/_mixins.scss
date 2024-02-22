@@ -1,0 +1,27 @@
+/* Återanvändbara stilblock. */ 
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
