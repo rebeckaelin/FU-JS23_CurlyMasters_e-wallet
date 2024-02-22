@@ -30,7 +30,7 @@ export const Cards = () => {
       <Header title="E-WALLET" subtitle="ACTIVE CARD" />
 
       <section className="active-card-container"></section>
-      <section className="wallet-container">{/* <Card /> */}</section>
+      <section className="wallet-container"></section>
       <ul className="wallet">{wallet}</ul>
 
       <AddNewCardButton />

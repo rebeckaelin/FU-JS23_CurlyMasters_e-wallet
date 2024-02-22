@@ -11,7 +11,7 @@ import Ninjabank from "./../../assets/Ninjabank.svg";
 
 const Form = () => {
   const navigate = useNavigate();
-  const [selectedIcon, setSelectedIcon] = useState(null);
+
   const [formData, setFormData] = useState({
     cardnumber: "",
     name: "",
