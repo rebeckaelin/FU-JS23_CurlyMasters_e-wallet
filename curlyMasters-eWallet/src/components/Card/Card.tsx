@@ -1,34 +1,27 @@
-import React from "react";
+import {CardProps} from "../../constants/Interfaces";
 import "./Card.scss";
 import Wifi from "../../assets/wifi.svg";
 
-interface CardProps {
-  cardnumber: string;
-  name: string;
-  validthru: string;
-  backgroundColor: string;
-  color: string;
-  vendor: string;
-  disableClick?: boolean;
-  onClick?: () => void;
-}
-
+// funktion för att dela upp numret i 4 delar med 4 nummer i varje
 const groupByFour = (num: string): string => {
   return num.replace(/(\d{4}(?!\s))/g, "$1 ");
 };
-
+//funktion som delar upp de 4 siffrorna i stängen med / så det blir 11/22 tex
 const groupByTwo = (num: string): string => {
+  //kontrollerar så att "num" är en sträng så if-satsen kan köras
+  //trim() tar bort blanksteg och kontrollerar att strängen inte är tom
+  //num.length kontrollerar så att det finns fler än 2 tecken
   if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
     const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
     return formattedNum;
   }
   return "";
 };
-
+//funktion för att göra texten från cardholdername till stora bokstäver
 const toUpperCase = (name: string): string => {
   return name.toUpperCase();
 };
-
+//komponent som renderar ut kortet på sidan där den kallas
 const Card: React.FC<CardProps> = (props) => {
   return (
     <div>

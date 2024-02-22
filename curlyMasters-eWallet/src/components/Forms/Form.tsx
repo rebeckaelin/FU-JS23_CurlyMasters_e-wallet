@@ -1,5 +1,4 @@
 import {useState} from "react";
-
 import {cardList} from "../../constants/CardList";
 import {useNavigate} from "react-router-dom";
 
@@ -46,7 +45,7 @@ const Form = () => {
       backgroundColor = "rgba(139, 88, 249, 1)";
       selectedIcon = Blockchain;
     } else {
-      backgroundColor = "rgba(255, 255, 255, 1)";
+      backgroundColor = "rgba(211, 211, 211)";
     }
 
     cardList.push({
