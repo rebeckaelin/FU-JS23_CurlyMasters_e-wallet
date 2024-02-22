@@ -1,11 +1,11 @@
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./AddNewCardButton.scss";
 
-const AddNewCardButton = () => {
+const AddNewCardButton = ({ onClick }) => { 
   const navigate = useNavigate();
 
   return (
-    <button className="addButton" onClick={() => navigate("addcard")}>
+    <button className="addButton" onClick={onClick}>
       ADD NEW CARD
     </button>
   );
