@@ -1,19 +1,29 @@
 import "./Card.scss";
-import Wifi from "../../../img/Group.svg";
-import Bitcoin from "../../../img/Bitcoin.svg";
+import Wifi from "../../assets/wifi.svg";
 
-type Props = {};
+const Card = (props) => {
+  const groupByFour = (num) => {
+    return num.replace(/(\d{4}(?!\s))/g, "$1 ");
+  };
 
-const Card = (props: Props) => {
+  const groupByTwo = (num) => {
+    if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
+      const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
+      return formattedNum;
+    }
+    return ""; // return empty string if num is not valid
+  };
   return (
-    <>
-      <article className="card">
+    <div>
+      <article
+        style={{backgroundColor: props.backgroundColor, color: props.color}}
+        className="card">
         <picture className="img-wrapper">
           <img src={Wifi} alt="" />
-          <img src={Bitcoin} alt="" />
+          <img src={props.vendor} alt="" />
         </picture>
         <article className="card-number-wrapper">
-          <p className="card-number">6666 6666 6666 6666</p>
+          <p className="card-number">{groupByFour(props.cardnumber)}</p>
         </article>
         <div>
           <article className="card-holder">
@@ -21,12 +31,12 @@ const Card = (props: Props) => {
             <p className="date-label">VALID THRU</p>
           </article>
           <article className="card-user">
-            <p className="name">CHRISTOFFER WALLENBERG</p>
-            <p className="date">10/23</p>
+            <p className="name">{props.name}</p>
+            <p className="date">{groupByTwo(props.validthru)}</p>
           </article>
         </div>
       </article>
-    </>
+    </div>
   );
 };
 

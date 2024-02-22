@@ -1,0 +1,11 @@
+.defaultPage {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 414px;
+  min-height: 800px;
+  width: 100%;
+  padding: 1rem;
+}

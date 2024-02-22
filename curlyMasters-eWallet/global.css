@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=PT+Mono:400,700|Source+Sans+Pro:700,600");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+/* @import url("https://fonts.googleapis.com/css?family=PT+Mono:400,700|Source+Sans+Pro:700,600");
 
 :root {
   --bevel: ;
@@ -12,4 +11,11 @@
   --vendor-block-chain-purple: rgba(139, 88, 249, 1);
   --vendor-evil-corp-red: rgba(243, 51, 85, 1);
   --vendor-ninja-black: rgba(34, 34, 34, 1);
+} */
+
+body {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

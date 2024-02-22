@@ -1,2 +1,18 @@
-@import '../../sass/mixins';
-@import '../../sass/variables';
+@import url("https://fonts.googleapis.com/css?family=PT+Mono:400,700|Source+Sans+Pro:700,600");
+
+.headTitle {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.headSubtitle {
+  font-family: Source Sans Pro;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+
+  text-align: center;
+}
