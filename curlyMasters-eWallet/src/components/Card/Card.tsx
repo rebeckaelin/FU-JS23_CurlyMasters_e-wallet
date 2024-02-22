@@ -1,21 +1,26 @@
 import "./Card.scss";
 import Wifi from "../../assets/wifi.svg";
 
+//funktion som grupperar numren i cardnumber i 4*4
 const groupByFour = (num) => {
   return num.replace(/(\d{4}(?!\s))/g, "$1 ");
 };
 
+//funktion som lägger till ett / mellan numrena i valid thru
 const groupByTwo = (num) => {
   if (typeof num === "string" && num.trim() !== "" && num.length >= 2) {
     const formattedNum = num.replace(/(\d{2}(?=\d))/g, "$1/");
     return formattedNum;
   }
-  return ""; // return empty string if num is not valid
+  return "";
 };
+
+//funktion för att göra namnet på kortet till stora bokstäver oavsett hur man skriver in det
 const toUpperCase = (name) => {
   return name.toUpperCase();
 };
 
+//komponent
 const Card = (props) => {
   return (
     <div>

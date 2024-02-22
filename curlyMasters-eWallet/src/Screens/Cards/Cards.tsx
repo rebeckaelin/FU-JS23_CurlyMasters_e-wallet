@@ -9,6 +9,7 @@ import {cardList as initialCardList} from "../../constants/CardList";
 export const Cards = () => {
   const [activeCard, setActiveCard] = useState(null);
   const [cardList, setCardList] = useState(initialCardList);
+
   // Här letar vi upp ett kort i vår lista av kort (cardList) som matchar det id vi klickade på.
   const handleClick = (id) => {
     const clickedCard = cardList.find((card) => card.id === id);
@@ -37,8 +38,8 @@ export const Cards = () => {
           backgroundColor={activeCard.backgroundColor}
           color={activeCard.color}
           vendor={activeCard.selectedIcon}
-          onClick={() => setActiveCard(null)} // Deselect active card when clicked
-          disableClick={true} // Prevent clicking on the active card
+          onClick={() => setActiveCard(null)}
+          disableClick={true}
         />
       </div>
     );
